@@ -251,7 +251,7 @@ jobs:
         run: |
           cargo binstall -y cargo-cyclonedx
           cargo cyclonedx --all --format json
-          cp trust/bom.json staging/trust.project.sbom.json
+          cp trust/trust.cdx.json staging/trust.project.sbom.json
 
       - name: Create SBOM of the frontend
         # gather (embedded) dependencies from the yarn build
