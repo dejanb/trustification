@@ -118,6 +118,13 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Log in to ghcr.io
+        uses: redhat-actions/podman-login@v1
+        with:
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: "ghcr.io"
+
       - name: Sign the images with GitHub OIDC Token
         env:
           COSIGN_EXPERIMENTAL: true
